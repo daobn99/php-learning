@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  php:
+    image: mcr.microsoft.com/devcontainers/php:1-8.2-bullseye
+    container_name: php-dev
+    working_dir: /workspace
+    volumes:
+      - ..:/workspace:cached
+    ports:
+      - "8080:8080"
+    # Nếu muốn debug hoặc cài thêm package, dùng quyền root
+    user: vscode
+    command: sleep infinity
